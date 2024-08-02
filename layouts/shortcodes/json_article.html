@@ -1,0 +1,49 @@
+{{ $file := .Get "file" }}
+{{ $json := getJSON $file }}
+
+<article>
+    <style>
+.news-article {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+            .news-article img,
+            .news-article video,
+            .news-article iframe {
+                max-width: 40% !important;
+                width: auto !important;
+                height: auto !important;
+                display: block !important;
+                margin: 0 auto !important; /* Center the media */
+            }
+
+            .news-article figure {
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 100% !important;
+            }
+
+            .news-article figcaption {
+                text-align: left !important;
+                font-size: 0.9em !important;
+                color: #666 !important;
+            }
+        </style>
+    <header>
+        <h1>{{ $json.title }}</h1>
+        <p>By <a href="{{ (index $json.author_objects 0).url }}">{{ (index $json.author_objects 0).name }}</a></p>
+        <p>Published on {{ dateFormat "January 2, 2006" $json.date_published }}</p>
+    </header>
+        {{ $json.title }}
+    <div class="news-article">
+        {{ $json.text | safeHTML }}
+    </div>
+    <footer>
+        <p>Source: <a href="{{ $json.url }}">{{ $json.provider }}</a></p>
+    </footer>
+</article>
