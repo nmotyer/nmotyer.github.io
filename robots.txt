@@ -1,0 +1,46 @@
+User-agent: *
+# Allow all content to be crawled
+Allow: /
+
+# Block access to specific folders (adjust paths as necessary)
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /junk/
+
+# Sitemap location (update URL as needed)
+Sitemap: https://www.example.com/sitemap.xml
+
+# Crawl-delay directive (use only if server load issues occur)
+# Crawl-delay: 10
+
+# Prevent crawling of duplicate content (e.g., filtered or sorted versions of pages)
+Disallow: /*?*
+Disallow: /search
+Disallow: /tags
+
+# Allow specific bots to access everything
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block specific bots known for causing issues
+User-agent: BadBot
+Disallow: /
+
+# Allow all images and media to be crawled
+User-agent: Googlebot-Image
+Allow: /
+
+# Allow AdSense bot
+User-agent: Mediapartners-Google
+Allow: /
+
+# Blocking private files
+Disallow: /private/
+
+# Blocking specific file types from being indexed
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
