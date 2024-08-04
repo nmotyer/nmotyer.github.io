@@ -3,43 +3,79 @@
 
 <article>
     <style>
-.news-article {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+
+        .ps-cta {
+            border: #333 !important;
+            border-style: solid !important;
+            border-width: 1px;
+            display: none;
+        }
+
+        .news-article {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .news-article img,
+        .news-article video,
+        .news-article iframe {
+            /* max-width: 68% !important; */
+            margin-left: 0 !important;
+            padding: 5px;
+
+        }
+
+        .news-article figure {
+    margin: 0 !important;
+    padding: 5px !important;
+    border: #333;
+    border-style: solid;
+    max-width: 68%;
+    /* width: 100% !important; */
 }
 
-            .news-article img,
-            .news-article video,
-            .news-article iframe {
-                max-width: 40% !important;
-                width: auto !important;
-                height: auto !important;
-                display: block !important;
-                margin: 0 auto !important; /* Center the media */
-            }
+@media (max-width: 1200px) {
+    .news-article figure {
+        max-width: 68%;
+    }
+}
 
-            .news-article figure {
-                margin: 0 !important;
-                padding: 0 !important;
-                width: 100% !important;
-            }
+@media (max-width: 992px) {
+    .news-article figure {
+        max-width: 90%;
+    }
+}
 
-            .news-article figcaption {
-                text-align: left !important;
-                font-size: 0.9em !important;
-                color: #666 !important;
-            }
+@media (max-width: 768px) {
+    .news-article figure {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 576px) {
+    .news-article figure {
+        max-width: 100%;
+    }
+}
+
+        .news-article figcaption {
+            text-align: left !important;
+            font-size: 0.9em !important;
+            color: #666 !important;
+            padding-bottom: 10px !important;
+            margin-left: 5px;
+        }
         </style>
     <header>
-        <h1>{{ $json.title }}</h1>
+        <!-- <h1>{{ $json.title }}</h1> -->
         <p>By <a href="{{ (index $json.author_objects 0).url }}">{{ (index $json.author_objects 0).name }}</a></p>
         <p>Published on {{ dateFormat "January 2, 2006" $json.date_published }}</p>
     </header>
-        {{ $json.title }}
     <div class="news-article">
         {{ $json.text | safeHTML }}
     </div>
