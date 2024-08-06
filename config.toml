@@ -88,7 +88,7 @@ pluralizelisttitles = false
     author = "Nicholas Paul"
     defaultKeywords = ["devcows", "hugo", "go"]
     mainSections = ["news"]
-    defaultDescription = "Site template made by Devcows using Hugo"
+    defaultDescription = "Discover the latest academic news and insights at EduHub, an information aggregate website founded in Melbourne. Stay informed with curated content from top educational sources, covering research breakthroughs, educational policies, and more."
 
     # Social media
     facebook_site = "" # the Facebook handle of your site ('https://www.facebook.com/HANDLE')
