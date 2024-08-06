@@ -41,7 +41,7 @@ def create_sitemap(directory, base_url, extra_urls):
 # Directory containing .md files
 directory = "./content/news"
 # Base URL for the site
-base_url = "https://nmotyer.github.io"
+base_url = "https://eduhub.news"
 # Extra URLs to include in the sitemap
 extra_urls = [
     f"{base_url}/news",
