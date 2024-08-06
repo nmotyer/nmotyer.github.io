@@ -8,7 +8,7 @@ Disallow: /tmp/
 Disallow: /junk/
 
 # Sitemap location (update URL as needed)
-Sitemap: https://nmotyer.github.io/sitemap.xml
+Sitemap: https://eduhub.news/sitemap.xml
 
 # Crawl-delay directive (use only if server load issues occur)
 # Crawl-delay: 10
